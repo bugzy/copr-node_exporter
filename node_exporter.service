@@ -1,0 +1,15 @@
+[Unit]
+Description=Prometheus node exporter
+After=syslog.target network.target
+
+[Service]
+Type=simple
+RemainAfterExit=no
+User=node_exporter
+Group=mysqld_exporter
+EnvironmentFile=/etc/sysconfig/node_exporter.conf
+ExecStart=/usr/sbin/node_exporter $OPTIONS
+LimitNOFILE=200
+
+[Install]
+WantedBy=multi-user.target
