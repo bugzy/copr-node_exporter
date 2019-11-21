@@ -16,7 +16,7 @@
 
 Name:           golang-%{provider}-%{project}-%{repo}
 Version:        0.18.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Exporter for machine metrics
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
@@ -94,6 +94,9 @@ getent passwd node_exporter > /dev/null || \
 %endif
 
 %changelog
+* Thu Nov 21 2019 Bugzy Little <bugzylittle@gmail.com> - 0.18.1-2
+- Fix default config file location in systemd unit file
+
 * Thu Nov 21 2019 Bugzy Little <bugzylittle@gmail.com> - 0.18.1-1
 - Initial package
 
